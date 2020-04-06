@@ -1,0 +1,28 @@
+Todo:
+
+[x] Switch character typing logic to look ahead (user has to type character in next balloon to jump)
+[ ] Provide a starting platform for Ninja character
+[ ] Provide an ending platform for Ninja character
+
+[ ] Popout balloon that needs to be typed
+
+[x] Integrate typing engine components for accurate detection of typed characters
+[ ] Detect when player hits the bottom of screen and play a "life lost" animation
+
+[ ] 
+[ ] 
+[ ] 
+[ ] 
+
+
+
+# to start a web server using python
+python -m SimpleHTTPServer 8008
+
+
+----
+
+- For now. When you finish or lose, it ends the lesson and submits score
+- The score is calculated by % progress X max-score
+- The number of stars is calculated by % progress X stars
+- Starting text says: Type letters on the baloon to begin
