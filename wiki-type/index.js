@@ -121,7 +121,7 @@ var data = {
     },
     "extract": "Traditional medicine comprises medical aspects of traditional knowledge that developed over generations within various societies before the era of modern medicine. The World Health Organization (WHO) defines traditional medicine as \"the sum total of the knowledge, skills, and practices based on the theories, beliefs, and experiences indigenous to different cultures, whether explicable or not, used in the maintenance of health as well as in the prevention, diagnosis, improvement or treatment of physical and mental illness\". Traditional medicine is contrasted with scientific medicine."
 }
-
+data.extract = "abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz "
 initializeExerciseFromJSON(data)
 
 $("#requested-article").keyup((event) => {
@@ -131,5 +131,14 @@ $("#requested-article").keyup((event) => {
         $("#article-content").focus();
     }
 });
-
+ $(document).keydown(function(event) {
+            if (event.target.nodeName == 'TEXTAREA' || event.target.nodeName == 'INPUT') {
+                return;
+            };
+            /* Act on the event */
+            if (event.keyCode == 32) {
+                event.preventDefault();
+                alert(1)
+            };
+        });
 $("#article-content").focus();

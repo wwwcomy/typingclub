@@ -77,6 +77,9 @@ class Cursor {
         // needed to prevent, for example, a 'space' key from propagating and
         // causing the window to scroll
         event.stopPropagation();
+        if (event.keyCode == 32) {
+            event.preventDefault();
+        };
         if (event.key.length !== 1) {
             if (event.key === "Backspace") {
                 this.retreat();
