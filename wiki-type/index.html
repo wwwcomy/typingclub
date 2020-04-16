@@ -12,11 +12,13 @@
             Choose an article: <input type="text" name="requested-article" id="requested-article">
         </div>
         <hr>
-        <p id='article-content' tabindex="0">
-            <span style='font-family: "Roboto Mono", monospace'>
-                ... Loading article content ...
-            </span>
-        </p>
+        <div id='wrapper' style='height: 400px; overflow: hidden;' > 
+            <div id='article-content' tabindex="0" style='margin-top: 0px'>
+                <span style='font-family: "Roboto Mono", monospace'>
+                    ... Loading article content ...
+                </span>
+            </div>
+        </div>  
         <script src="jquery-1.12.4.min.js"></script>
         <script src="cursor.js"></script>
         <script src="wikimediaREST.js"></script>

@@ -33,6 +33,7 @@ class Cursor {
             if (next_token_unit !== null && next_token_unit.is(".token-unit")) {
                 this.current_token_unit = next_token_unit;
                 this.current_token_unit.addClass("cursor");
+                this.adjustScroll();
             } else {
                 this.onCompletion();
             }
@@ -51,7 +52,24 @@ class Cursor {
             if (prev_token_unit !== null) {
                 this.current_token_unit = prev_token_unit;
                 this.current_token_unit.addClass("cursor");
+                this.adjustScroll();
             }
+        }
+    }
+
+    adjustScroll() {
+        var articleContent = $("#article-content");
+        var lines = articleContent.children();
+        var i = 0;
+        for (i = 0; i < lines.length; i++) {
+            if (lines[i] == this.current_token_unit.parent().parent()[0]) {
+                break;
+            }
+        }
+        if (i >= 5) {
+            articleContent.css("margin-top", "-" + (i - 4) * 52 + "px");
+        } else {
+            articleContent.css("margin-top", "0px");
         }
     }
 
@@ -59,14 +77,14 @@ class Cursor {
         if (this.cursor_idx >= this.token_units.length) {
             return null;
         }
-        return this.tokenUnitAt(this.cursor_idx+1);
+        return this.tokenUnitAt(this.cursor_idx + 1);
     }
 
     previousTokenUnit(token_unit) {
         if (this.cursor_idx <= 0) {
             return null;
         }
-        return this.tokenUnitAt(this.cursor_idx-1);
+        return this.tokenUnitAt(this.cursor_idx - 1);
     }
 
     tokenUnitAt(idx) {
