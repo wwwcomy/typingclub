@@ -95,7 +95,7 @@ class Cursor {
         // needed to prevent, for example, a 'space' key from propagating and
         // causing the window to scroll
         event.stopPropagation();
-        if (event.keyCode == 32) {
+        if (event.keyCode == 32 || event.keyCode == 8) {
             event.preventDefault();
         };
         if (event.key.length !== 1) {
