@@ -28,7 +28,16 @@ var articles = {
 		"content": "The sun shines on the sea. The sun shines on the trees. The sun shines on the farm. The sun shines on the pond. The sun shines on the town. The sun shines on the house. The sun shines on me!"
 	}, ],
 	"PinkB": [{
-		"title": "PinkB Title1",
-		"content": "PinkB content"
+		"title": "My Dad is a Builder",
+		"content": "My dad is a builder. He has some wood. What is my dad building? He has a hammer. What is my dad building? He has a saw. What is my dad building? He has some glue. What is my dad building? He has s paint brush. What is my dad building? What is my dad building? He is building a house for me!"
+	}, {
+		"title": "The Last Lemon",
+		"content": "'I can't get the last lemon,' said the elephant. 'I can help you', said the goat. 'I can get on your back.' 'I can't get the last lemon,' said the goat. 'I can help you,' said the monkey. 'I can get on your back.' 'I can't get the last lemon,' said the monkey. 'I can help you,' said the squirrel. 'I can get on your back.' OUCH! Crash! 'I can get the last lemon!' said the squirrel."
+	}, {
+		"title": "Our Den",
+		"content": "'Look! I've got some blankets for the den,' said Sami. 'Good,' said Max. 'Look! I've got some string for the den,' said Sami. 'Good,' said Max. 'Look! I've got some pegs for the den,' said Sami. 'Good,' said Max. 'Look! I've got a table for the den,' said Sami. 'Good,' said Max. 'Look! I've got some chairs for the den,' said Sami. 'Good,' said Max. 'Look! I've got some food for the den,' said Sami. 'Good,' said Max. 'I've got a den,' said Max. 'Good,' said Sami."
+	}, {
+		"title": "Omar's First Day at School",
+		"content": "Omar is going to school. 'This is my new uniform,' said Omar. 'This is my new school,' said Omar. 'This is my new class,' said Omar. 'This is my new teacher,' said Omar. 'This is my new pencil case,' said Omar. 'This is my new book,' said Omar. 'Beno and Zara are my new friends,' said Omar."
 	}]
 }

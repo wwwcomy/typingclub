@@ -1,4 +1,4 @@
-const LINE_WIDTH = 45;
+const LINE_WIDTH = 35;
 const ARTICLE_LENGTH = 340;
 const IGNORE_CASE = true;
 
@@ -39,11 +39,7 @@ function setArticleTitle(title, url) {
 }
 
 function displayResults() {
-    $("body").append("<hr>");
-    $("body").append("<h1 id='results'>Exercise complete</h1>");
-    $("body").append("<h2>Summary</h2>");
-    $("body").append("<ul></ul>");
-
+    var tokenUnitCount = $(".token-unit").length;
     var accuracy = $(".correct,.fixed").length / $(".token-unit").length * 100;
     var real_accuracy = $(".correct").length / $(".token-unit").length * 100;
     if (isNaN(accuracy)) {
@@ -54,8 +50,10 @@ function displayResults() {
     }
     accuracy = accuracy.toFixed(2);
     real_accuracy = real_accuracy.toFixed(2);
-    $("body ul").append("<li><b>Accuracy</b>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + accuracy + '%</li>');
-    $("body ul").append("<li><b>Real accuracy</b>: " + real_accuracy + "%</li>");
+    var articleTitle = $("#article-title").text();
+    $("#resultDiv").append("<h3>" + articleTitle + "</h3>" + tokenUnitCount + " words")
+    $("#resultDiv").append("<li><b>Accuracy</b>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + accuracy + '%</li>');
+    $("#resultDiv").append("<li><b>Real accuracy</b>: " + real_accuracy + "%</li>");
 
     document.getElementById("results").scrollIntoView({
         behavior: "smooth"
@@ -70,7 +68,7 @@ function initializeExercise(title, url) {
     };
     var cursor = new Cursor(onCompletion);
     $("#article-content").keydown(cursor.processKeyDown);
-    setArticleTitle(title, url);
+    setArticleTitle(title, "#");
 }
 
 function initializeExerciseFromJSON(data) {
@@ -126,6 +124,7 @@ var data = {
     },
     "extract": "Traditional medicine comprises medical aspects of traditional knowledge that developed over generations within various societies before the era of modern medicine. The World Health Organization (WHO) defines traditional medicine as \"the sum total of the knowledge, skills, and practices based on the theories, beliefs, and experiences indigenous to different cultures, whether explicable or not, used in the maintenance of health as well as in the prevention, diagnosis, improvement or treatment of physical and mental illness\". Traditional medicine is contrasted with scientific medicine."
 }
+data.titles.display = "A-Z testing"
 data.extract = "1abcdefghijklmnopqrstuvwxyz 2abcdefghijklmnopqrstuvwxyz 3abcdefghijklmnopqrstuvwxyz 4abcdefghijklmnopqrstuvwxyz 5abcdefghijklmnopqrstuvwxyz 6abcdefghijklmnopqrstuvwxyz 7abcdefghijklmnopqrstuvwxyz 8abcdefghijklmnopqrstuvwxyz 9abcdefghijklmnopqrstuvwxyz 10abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz "
 initializeExerciseFromJSON(data)
 
@@ -196,6 +195,6 @@ $(function() {
             "extract": content
         }
         initializeExerciseFromJSON(data);
-    $("#article-content").focus();
+        $("#article-content").focus();
     });
 });

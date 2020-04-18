@@ -31,24 +31,32 @@
             </div>
         </div>
     </nav>
-
     <div class="container">
-        <div id="menuWrapper" class="dropdown">
-            <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="javascript:;">Choose a document ...<span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu multi-level" id="menu" role="menu" aria-labelledby="dropdownMenu">
-            </ul>
-        </div>
-        <div>
-            <h1 id='article-title'></h1>
-            <div style='display:none;'>Choose an article: <input type="text" name="requested-article" id="requested-article"></div>
-        </div>
-        <hr>
-        <div id='wrapper' style='height: 400px; overflow: hidden;'>
-            <div id='article-content' tabindex="0" style='margin-top: 0px;padding-left: 10px;'>
-                <span style='font-family: "Roboto Mono", monospace'>
-                    ... Loading article content ...
-                </span>
+        <div class="row">
+            <div class="col-md-9">
+                <div id="menuWrapper" class="dropdown">
+                    <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="javascript:;">Choose a document ...<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu multi-level" id="menu" role="menu" aria-labelledby="dropdownMenu">
+                    </ul>
+                </div>
+                <div>
+                    <h1 id='article-title'></h1>
+                    <div style='display:none;'>Choose an article: <input type="text" name="requested-article" id="requested-article"></div>
+                </div>
+                <hr>
+                <div id='wrapper' style='height: 400px; overflow: hidden;'>
+                    <div id='article-content' tabindex="0" style='margin-top: 0px;padding-left: 10px;'>
+                        <span style='font-family: "Roboto Mono", monospace'>
+                            ... Loading article content ...
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <h1>Result:</h1>
+                <div id='resultDiv'></div>
             </div>
         </div>
     </div>
