@@ -19,6 +19,7 @@ class Cursor {
         this.nextTokenUnit = this.nextTokenUnit.bind(this);
         this.tokenUnitAt = this.tokenUnitAt.bind(this);
         this.previousTokenUnit = this.previousTokenUnit.bind(this);
+        this.adjustScroll();
     }
 
     canAdvance() {
