@@ -1,5 +1,6 @@
 const LINE_WIDTH = 45;
 const ARTICLE_LENGTH = 340;
+const IGNORE_CASE = true;
 
 function tokenize(str) {
     // This regular expression uses a positive lookbehind to split on
@@ -56,7 +57,9 @@ function displayResults() {
     $("body ul").append("<li><b>Accuracy</b>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + accuracy + '%</li>');
     $("body ul").append("<li><b>Real accuracy</b>: " + real_accuracy + "%</li>");
 
-    document.getElementById("results").scrollIntoView({ behavior: "smooth" });
+    document.getElementById("results").scrollIntoView({
+        behavior: "smooth"
+    });
 }
 
 function initializeExercise(title, url) {
@@ -83,7 +86,8 @@ function initializeExerciseFromJSON(data) {
     // take the first roughly ARTICLE_LENGTH characters worth of sentences from
     // the article data
     console.assert(data.extract.length > 0, "Article content fetched has length 0.");
-    var extract = data.extract.split(/(?<=[.] )/g);
+    var rawExtract = IGNORE_CASE ? data.extract.toLowerCase() : data.extract;
+    var extract = rawExtract.split(/(?<=[.] )/g);
     var num_sentences = 1;
     var article_length = extract[0].length;
     for (; num_sentences < extract.length && article_length < ARTICLE_LENGTH; num_sentences++) {
@@ -109,6 +113,7 @@ function initializeExerciseFromJSON(data) {
 
     //initializeExercise(data.titles.display, data.content_urls.desktop.page);
     initializeExercise(data.titles.display, null);
+    $("#article-content").focus();
 }
 
 // load a sample extract and convert it into an exercise
@@ -131,14 +136,66 @@ $("#requested-article").keyup((event) => {
         $("#article-content").focus();
     }
 });
- $(document).keydown(function(event) {
-            if (event.target.nodeName == 'TEXTAREA' || event.target.nodeName == 'INPUT') {
-                return;
-            };
-            /* Act on the event */
-            if (event.keyCode == 32) {
-                event.preventDefault();
-                alert(1)
-            };
-        });
-$("#article-content").focus();
+$(document).keydown(function(event) {
+    if (event.target.nodeName == 'TEXTAREA' || event.target.nodeName == 'INPUT') {
+        return;
+    };
+    /* Act on the event */
+    if (event.keyCode == 32) {
+        event.preventDefault();
+        alert(1)
+    };
+});
+
+$(function() {
+    var findContentByTitle = function(t) {
+        for (var category in articles) {
+            var itemData = articles[category];
+            for (var item in itemData) {
+                if (t === itemData[item].title) {
+                    return itemData[item].content;
+                }
+            }
+        }
+        return "";
+    }
+    var getMenuItem = function(category) {
+        var itemData = articles[category]
+        var items = $("<ul class=\"dropdown-menu\">");
+        for (var item in itemData) {
+            var eachLi = $("<li>")
+                .append(
+                    $("<a>", {
+                        html: itemData[item].title
+                    }));
+            items.append(eachLi);
+
+        }
+        return items;
+    };
+
+    var $menu = $("#menu");
+    for (var category in articles) {
+        $menu.append(
+            $("<li class=\"dropdown-submenu\">")
+            .append($("<a>", {
+                html: category
+            }))
+            .append(getMenuItem(category))
+        );
+    }
+    $('#menuWrapper li ul li').on('click', function() {
+        var title = $(this).text();
+        var content = findContentByTitle(title);
+        var data = {
+            "titles": {
+                "canonical": title,
+                "normalized": title,
+                "display": title
+            },
+            "extract": content
+        }
+        initializeExerciseFromJSON(data);
+    $("#article-content").focus();
+    });
+});
