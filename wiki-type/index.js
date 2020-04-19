@@ -1,6 +1,7 @@
 const LINE_WIDTH = 35;
 const ARTICLE_LENGTH = 340;
 const IGNORE_CASE = true;
+startDate = new Date();
 
 function tokenize(str) {
     // This regular expression uses a positive lookbehind to split on
@@ -39,6 +40,9 @@ function setArticleTitle(title, url) {
 }
 
 function displayResults() {
+	var currentDate = new Date();
+	var timeDiff = currentDate.getTime() - startDate.getTime();
+	var timeDiffMin = timeDiff/1000/60
     var tokenUnitCount = $(".token-unit").length;
     var accuracy = $(".correct,.fixed").length / $(".token-unit").length * 100;
     var real_accuracy = $(".correct").length / $(".token-unit").length * 100;
@@ -54,10 +58,9 @@ function displayResults() {
     $("#resultDiv").append("<h3>" + articleTitle + "</h3>" + tokenUnitCount + " words")
     $("#resultDiv").append("<li><b>Accuracy</b>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + accuracy + '%</li>');
     $("#resultDiv").append("<li><b>Real accuracy</b>: " + real_accuracy + "%</li>");
+    $("#resultDiv").append("<li><b>Time Used</b>: " + parseInt(timeDiffMin) + "min " + (timeDiff/1000)%60 + "s</li>");
+	$("#resultDiv").append("<li><b>Speed</b>: " + parseInt(tokenUnitCount/timeDiffMin) + " KMP</li>");
 
-    document.getElementById("results").scrollIntoView({
-        behavior: "smooth"
-    });
 }
 
 function initializeExercise(title, url) {
@@ -68,6 +71,7 @@ function initializeExercise(title, url) {
     };
     var cursor = new Cursor(onCompletion);
     $("#article-content").keydown(cursor.processKeyDown);
+	startDate = new Date();
     setArticleTitle(title, "#");
 }
 
