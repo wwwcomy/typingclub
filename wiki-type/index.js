@@ -146,7 +146,6 @@ $(document).keydown(function(event) {
     /* Act on the event */
     if (event.keyCode == 32) {
         event.preventDefault();
-        alert(1)
     };
 });
 
