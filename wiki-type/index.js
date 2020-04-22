@@ -1,6 +1,7 @@
 const LINE_WIDTH = 35;
 const ARTICLE_LENGTH = 340;
 const IGNORE_CASE = true;
+const IGNORE_PUNCTUATION_MARK = true;
 startDate = new Date();
 
 function tokenize(str) {
@@ -89,6 +90,7 @@ function initializeExerciseFromJSON(data) {
     // the article data
     console.assert(data.extract.length > 0, "Article content fetched has length 0.");
     var rawExtract = IGNORE_CASE ? data.extract.toLowerCase() : data.extract;
+	rawExtract = IGNORE_PUNCTUATION_MARK ? rawExtract.replace(/[^a-zA-Z0-9\s]/g,'') : rawExtract;
     var extract = rawExtract.split(/(?<=[.] )/g);
     var num_sentences = 1;
     var article_length = extract[0].length;
