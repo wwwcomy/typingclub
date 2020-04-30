@@ -60,30 +60,30 @@ var articles = {
         "content": "Five senses. I have five senses. I can see. I can hear. I can smell. I can taste. I can touch. Seeing. Here are my eyes. I see with my eyes. I can see the cars. Hearing. Here are my ears. I hear with my ears. I can hear the music. Smelling. Here is my nose. I smell with my nose. I can smell the flower. Tasting. Here is my tongue. I taste with my tongue. I can taste the ice cream. Touching. Here are my fingers. I touch with my fingers. I can touch the ice. Look at this. Which of your senses will help you?"
     }, {
         "title": "Bedtime on the Farm",
-        "content": ""
+        "content": "On the farm, it is time for bed. 'I will go and get the animals,' says Dev. 'But where are they?' Cow will not go to bed. 'Come on, Cow,' says Dev. 'Here is some grass for you.' 'Time for bed,' says Dev. Goat will not go to bed. 'Come on, Goat,' says Dev. 'Here is an apple for you.' 'Time for bed, Goat,' says Dev. The hens will not go to bed. 'Come on, hens,' says Dev. 'Here is some corn for you.' 'Time for bed,' he says. On the farm, all the animals are in bed. 'Goodnight, everyone!' says Dev."
     }, {
-        "title": "",
-        "content": ""
+        "title": "Omar can Help",
+        "content": "Zara and Leila were making a house. 'This roof is no good!' said Zara. 'Can you help us, Omar?' Omar knew what to do. 'You need one more stick here,' he said. 'Thank you, Omar,' said the girls. Beno's tower was wobbling. It was going to fall. 'Oh, no!' said Beno. 'Can you help me, Omar?' Omar knew what to do. 'Thank you, Omar,' said Beno. At snack time, they went outside. Zara had a cake to share. 'Oh, no!' said Kofi. Omar knew what to do. He jumped up to get a new plate for Kofi. Oh no! Omar fell down. 'Help!' he shouted. Everyone said, 'We can help!' 'Thank you,' said Omar."
     }, {
-        "title": "",
-        "content": ""
+        "title": "The Enormous Watermelon",
+        "content": "Ravi and his mum picked lots of mangoes and lots of oranges. They picked an enormous watermelon, too. Mum and Ravi could carry the mangoes and oranges. But they couldn't carry the enormous watermelon! Then Ravi saw the wheelbarrow. 'I know what I can do!' he said. Ravi carried the watermelon in the wheelbarrow. 'Clever Ravi!' said Mum. Ravi and his mum sold lots of mangoes and lots of oranges. But they didn't sell the enormous watermelon. Then Mum saw the knife. 'I know what I can do!' she said. Mum cut the watermelon with the knife. They sold lots and lots of watermelon. Clever Mum!"
     }, {
-        "title": "",
-        "content": ""
+        "title": "Look! it's Baby Duck",
+        "content": "'Look! It's a baby duck,' said Brown Mouse. 'The baby duck can walk,' said Grey Mouse. 'The baby duck can quack, too,' said Brown Mouse. 'Look at the baby duck,' said Grey Mouse. 'He can swim.' 'Look at the baby duck now,' said Brown Mouse. 'He can fly.' 'Can the baby duck play?' said Grey Mouse. Boo! 'Help!' shouted Brown Mouse and Grey Mouse."
     }, {
-        "title": "",
-        "content": ""
+        "title": "Leopard and his Spots",
+        "content": "Leopard didn't like his spots. He went to see the doctor. The doctor gave him a banana. 'Oh no!' said Leopard. Leopard didn't like his yellow ears. The doctor gave him a tomato. 'Oh no!' said the doctor. Leopard didn't like his red nose. The doctor gave him a sweet. 'Oh no!' said Leopard. Leopard didn't like his stripes. The doctor gave him some spaghetti. 'Oh no!' said the doctor. Leopard didn't like his hair. The doctor gave him a cake. 'Yes!' said Leopard. Leopard liked his spots!"
     }, {
-        "title": "",
-        "content": ""
+        "title": "Seagull",
+        "content": "Seagull went into the clouds. 'Oh no!' said Seagull. 'Look at me.' Seagull went into the water. 'Oh no!' said Seagull. 'Look at me.' Seagull went onto the beach. 'Oh no!' said Seagull. 'Help me!' Pep and Lin looked at Seagull. 'Look! Is it a seagull?' said Pep. 'We can help you.' 'We can clean your wings.' Pep and Lin cleaned Seagull's wings. 'Thank you,' said Seagull. Pep, Lin and Seagull helped to clean the beach." 
     }, {
-        "title": "",
-        "content": ""
+        "title": "Houses and Homes",
+        "content": "I live in a bungalow. I go up a ramp to the door. one floor, ramp. I live in a town house. I go up the stairs to my bedroom. three floors. I live in a tower block. I go up in a lift to the 14th floor. lift, 14th floor. I live on a boat. It can go up and down the canal. I live in a house on stilts. I climb up a ladder to get in. I live in a house under the ground. I go down to the door to get in. inside walls. Here are some more houses. How do you go in?"
     }, {
-        "title": "",
-        "content": ""
+        "title": "The Weather Today",
+        "content": "What will the weather be like today? Sunny? Rainy? Windy? Snowy? Stormy? Or foggy? A sunny day. What will the weather by like today? It will be sunny. We can play on the beach. A windy day. What will the weather be like today? It will be windy. We can play in the park. A rainy day. What will the weather be like today? It will be rainy. We can play in the rain. A snowy day. What will the weather be like today? It will be snowy. We can play in the snow. A stormy day. What will the weather be like today? It will be stormy. We can play insdie. A foggy day. What will the weather be like today? It will be foggy. Where can we play today? "
     }, {
-        "title": "",
-        "content": ""
+        "title": "In the Sea",
+        "content": "Animals in the sea. These animals live in the sea. The sea is their home. fish seal shrimp shark whale jellyfish Fish This is a fish. It lives in the sea. Seal This is a seal. It lives in the sea. Shrimp This is a shrimp. The sea is its home. Shark This is a shark. It lives in the sea. Whale This is a whale. A whale's home is in the sea. Jellyfish This is a jellyfish. It lives in the sea."
     }]
 }
