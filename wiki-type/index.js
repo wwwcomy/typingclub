@@ -14,7 +14,7 @@ function tokenize(str) {
 function tokenToTokenElement(token) {
     return "<span class='token'>" +
         Array.prototype.map.call(token, (tu) =>
-            "<span class='token-unit'>" + tu + "</span>"
+            "<span class='token-unit'>" + (" " === tu ? "&nbsp;" : tu) + "</span>"
         ).join("") +
         "</span>";
 }
@@ -41,9 +41,9 @@ function setArticleTitle(title, url) {
 }
 
 function displayResults() {
-	var currentDate = new Date();
-	var timeDiff = currentDate.getTime() - startDate.getTime();
-	var timeDiffMin = timeDiff/1000/60
+    var currentDate = new Date();
+    var timeDiff = currentDate.getTime() - startDate.getTime();
+    var timeDiffMin = timeDiff / 1000 / 60
     var tokenUnitCount = $(".token-unit").length;
     var accuracy = $(".correct,.fixed").length / $(".token-unit").length * 100;
     var real_accuracy = $(".correct").length / $(".token-unit").length * 100;
@@ -59,8 +59,8 @@ function displayResults() {
     $("#resultDiv").append("<h3>" + articleTitle + "</h3>" + tokenUnitCount + " words")
     $("#resultDiv").append("<li><b>Accuracy</b>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + accuracy + '%</li>');
     $("#resultDiv").append("<li><b>Real accuracy</b>: " + real_accuracy + "%</li>");
-    $("#resultDiv").append("<li><b>Time Used</b>: " + parseInt(timeDiffMin) + "min " + (timeDiff/1000)%60 + "s</li>");
-	$("#resultDiv").append("<li><b>Speed</b>: " + parseInt(tokenUnitCount/timeDiffMin) + " KMP</li>");
+    $("#resultDiv").append("<li><b>Time Used</b>: " + parseInt(timeDiffMin) + "min " + (timeDiff / 1000) % 60 + "s</li>");
+    $("#resultDiv").append("<li><b>Speed</b>: " + parseInt(tokenUnitCount / timeDiffMin) + " KMP</li>");
 
 }
 
@@ -72,7 +72,7 @@ function initializeExercise(title, url) {
     };
     var cursor = new Cursor(onCompletion);
     $("#article-content").keydown(cursor.processKeyDown);
-	startDate = new Date();
+    startDate = new Date();
     setArticleTitle(title, "#");
 }
 
@@ -90,7 +90,7 @@ function initializeExerciseFromJSON(data) {
     // the article data
     console.assert(data.extract.length > 0, "Article content fetched has length 0.");
     var rawExtract = IGNORE_CASE ? data.extract.toLowerCase() : data.extract;
-	rawExtract = IGNORE_PUNCTUATION_MARK ? rawExtract.replace(/[^a-zA-Z0-9\s]/g,'') : rawExtract;
+    rawExtract = IGNORE_PUNCTUATION_MARK ? rawExtract.replace(/[^a-zA-Z0-9\s]/g, '') : rawExtract;
     var extract = rawExtract.split(/(?<=[.] )/g);
     var num_sentences = 1;
     var article_length = extract[0].length;
