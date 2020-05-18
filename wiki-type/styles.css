@@ -41,7 +41,7 @@ ul {
 
 .token-unit {
     color: #757575;
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'consolas', monospace;
     font-size: 35px;
 }
 
