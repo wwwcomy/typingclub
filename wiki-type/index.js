@@ -71,6 +71,8 @@ function initializeExercise(title, url) {
         displayResults();
     };
     var cursor = new Cursor(onCompletion);
+    // disable the event registered by the last cursor object
+	$("#article-content").off("keydown");
     $("#article-content").keydown(cursor.processKeyDown);
     startDate = new Date();
     setArticleTitle(title, "#");
