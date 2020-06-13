@@ -100,7 +100,7 @@ function initializeExerciseFromJSON(data) {
     var extract = rawExtract.split(/(?<=[.] )/g);
     var num_sentences = 1;
     var article_length = extract[0].length;
-    for (; num_sentences < extract.length && article_length < ARTICLE_LENGTH; num_sentences++) {
+    for (; num_sentences < extract.length && article_length < rawExtract.length; num_sentences++) {
         article_length += extract[num_sentences].length;
     }
     var tokens = tokenize(extract.slice(0, num_sentences).join("").trim());
