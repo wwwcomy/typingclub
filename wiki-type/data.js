@@ -85,9 +85,12 @@ var articles = {
     }, {
         "title": "In the Sea",
         "content": "Animals in the sea. These animals live in the sea. The sea is their home. fish seal shrimp shark whale jellyfish Fish This is a fish. It lives in the sea. Seal This is a seal. It lives in the sea. Shrimp This is a shrimp. The sea is its home. Shark This is a shark. It lives in the sea. Whale This is a whale. A whale's home is in the sea. Jellyfish This is a jellyfish. It lives in the sea."
-    }, ],
+    },
     "Yellow": [{
         "title": "Late for School",
         "content": "The children are going to school. Leila Omar Beno and Hamidi Zara They do not want to be late. Miss Garcia will be cross. Leila goes to school by bus. She sits by the window. 'Oh no!' says Leila. 'We are going to be late for school.' Omar walks to school with Dad and Safiya. They walk through the park. Omar stops to look at the fish in the pond. 'Oh no!' says Dad. 'We are going to be late for school.' Beno and Hamidi go to school on the tuk-tuk. The tuk-tuk stops. 'Oh no!' says Hamidi. 'We are going to be late for school.' Zara goes to school in Dad's car. The car will not start. 'Oh no!' says Zara. 'We are going to be late for school.' Miss Garcia goes to school on a bike. She does not want to be late. A cat runs into the road. 'Oh no!' says Miss Garcia. 'I am going to be late for school. All the children are at school. Miss Garcia is not at school. Where is Miss Garcia? There she is! Miss Garcia is late for school!"
+    }, {
+        "title": "Oh Bella",
+        "content": "Bella liked helping. 'Let me help you,' said Bella. Tessa carried the water on her head. Bella did it too. 'Oh Bella!' said Mama. Papa was hanging out the clothes. 'Let me help you, Papa,' said Bella. The line was too high. 'Oh Bella!' Papa said. Hugo was chopping firewood. 'Can I help you?' Bella asked. 'Don't drop the firewood,' Hugo said. Oh no! Bella fell into the river! 'Bella?' Hugo said. 'Bella!' he shouted. Hugo helped Bella out of the river. 'Look, Hugo,' Bella said. 'I did not drop the firewood.' 'Oh Bella!' Hugo said. Mama was baking bread. 'Can I help, Mama?' Bella asked. 'No, Bella, go and play,' Mama said. No one wanted Bella to help today. Tessa saw that Bella was sad. 'Will you help me plant the seeds?' said Tessa. Bella smiled. Bella watered the seeds every day. The plants grew bigger and bigger. 'I helped grow this watermelon,' Bella said. 'You are a good helper, Bella' everyone said."
     }]
 }
