@@ -92,5 +92,9 @@ var articles = {
     }, {
         "title": "Oh Bella",
         "content": "Bella liked helping. 'Let me help you,' said Bella. Tessa carried the water on her head. Bella did it too. 'Oh Bella!' said Mama. Papa was hanging out the clothes. 'Let me help you, Papa,' said Bella. The line was too high. 'Oh Bella!' Papa said. Hugo was chopping firewood. 'Can I help you?' Bella asked. 'Don't drop the firewood,' Hugo said. Oh no! Bella fell into the river! 'Bella?' Hugo said. 'Bella!' he shouted. Hugo helped Bella out of the river. 'Look, Hugo,' Bella said. 'I did not drop the firewood.' 'Oh Bella!' Hugo said. Mama was baking bread. 'Can I help, Mama?' Bella asked. 'No, Bella, go and play,' Mama said. No one wanted Bella to help today. Tessa saw that Bella was sad. 'Will you help me plant the seeds?' said Tessa. Bella smiled. Bella watered the seeds every day. The plants grew bigger and bigger. 'I helped grow this watermelon,' Bella said. 'You are a good helper, Bella' everyone said."
-    }]
+    }],
+	"Green" : [{
+		"title": "Hide and Seek",
+		"content": "Zara liked feeding the baby chicks. She liked to fill up their dish and watch them peck. 'One, two, three chicks,' said Zara. 'Fluff, Puff and Scruff.' One day the cage door was open. Zara looked inside. One, two ... wait! Where was Scruff? 'Miss Garcia!' called Zara. 'Scruff is gone! We have to find her!' All the children jumped up to help. Miss Garcia told them where to look. Omar and Beno looked on the floor. Zara and Leila looked on shelves and tables. Kofi looked under Miss Garcia's desk. Everyone was talking as they looked. Where was Scruff? How did she get out? 'Shh, class!' said Miss Garcia. 'I can hear a noise. Let's listen.' All the children stood still. Scratch, scratch. There was a noise! Scratch, scratch. There it was again! The scratching was coming from the back of the classroom. Scratch, scratch, scratch ... peep, peep, peep! 'There she is!' said Miss Garcia. 'I think Scruff was playing Hide and seek!' said Zara."
+	}]
 }
