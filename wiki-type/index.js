@@ -8,7 +8,8 @@ function tokenize(str) {
     // This regular expression uses a positive lookbehind to split on
     // whitespace without consuming the whitespace, i.e. trailing whitespace is
     // maintained in the resulting elements.
-    return str.split(/(?<=[ \t\n\r]+)/g);
+    var reg = new RegExp("([ \t\n\r]+)", 'g')
+    return str.split(reg);
 }
 
 function tokenToTokenElement(token) {
@@ -92,8 +93,11 @@ function initializeExerciseFromJSON(data) {
     // the article data
     console.assert(data.extract.length > 0, "Article content fetched has length 0.");
     var rawExtract = IGNORE_CASE ? data.extract.toLowerCase() : data.extract;
-    rawExtract = IGNORE_PUNCTUATION_MARK ? rawExtract.replace(/[^a-zA-Z0-9\s]/g, '') : rawExtract;
-    var extract = rawExtract.split(/(?<=[.] )/g);
+    var reg = new RegExp("[^a-zA-Z0-9\\s]", 'g')
+    rawExtract = IGNORE_PUNCTUATION_MARK ? rawExtract.replace(reg, '') : rawExtract;
+    // reg = new RegExp("(?<=[.] )", 'g') // this does not work for safari
+    reg = new RegExp("([ \t\n\r]+)", 'g')
+    var extract = rawExtract.split(reg);
     var num_sentences = 1;
     var article_length = extract[0].length;
     for (; num_sentences < extract.length && article_length < ARTICLE_LENGTH; num_sentences++) {
