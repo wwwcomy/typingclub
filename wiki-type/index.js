@@ -2,6 +2,7 @@ const LINE_WIDTH = 35;
 const ARTICLE_LENGTH = 340;
 const IGNORE_CASE = true;
 const IGNORE_PUNCTUATION_MARK = true;
+const KEEP_PERIOD_COMMA_QUESTION = true;
 startDate = new Date();
 
 function tokenize(str) {
@@ -93,14 +94,16 @@ function initializeExerciseFromJSON(data) {
     // the article data
     console.assert(data.extract.length > 0, "Article content fetched has length 0.");
     var rawExtract = IGNORE_CASE ? data.extract.toLowerCase() : data.extract;
-    var reg = new RegExp("[^a-zA-Z0-9\\s]", 'g')
-    rawExtract = IGNORE_PUNCTUATION_MARK ? rawExtract.replace(reg, '') : rawExtract;
-    // reg = new RegExp("(?<=[.] )", 'g') // this does not work for safari
+    var regExp = ''
+    if (IGNORE_PUNCTUATION_MARK) {
+		regExp = KEEP_PERIOD_COMMA_QUESTION ? "[^a-zA-Z0-9\\s,\.\?]" : "[^a-zA-Z0-9\\s]"
+		rawExtract = IGNORE_PUNCTUATION_MARK ? rawExtract.replace(regExp, '') : rawExtract;
+	}
     reg = new RegExp("([ \t\n\r]+)", 'g')
-    var extract = rawExtract.split(reg);
+    var extract = rawExtract.split(reg)
     var num_sentences = 1;
     var article_length = extract[0].length;
-    for (; num_sentences < extract.length && article_length < ARTICLE_LENGTH; num_sentences++) {
+    for (; num_sentences < extract.length && article_length < rawExtract.length; num_sentences++) {
         article_length += extract[num_sentences].length;
     }
     var tokens = tokenize(extract.slice(0, num_sentences).join("").trim());
