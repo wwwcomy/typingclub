@@ -97,7 +97,7 @@ function initializeExerciseFromJSON(data) {
     var regExp = ''
     if (IGNORE_PUNCTUATION_MARK) {
 		regExp = KEEP_PERIOD_COMMA_QUESTION ? "[^a-zA-Z0-9\\s,\.\?]" : "[^a-zA-Z0-9\\s]"
-		rawExtract = IGNORE_PUNCTUATION_MARK ? rawExtract.replace(regExp, '') : rawExtract;
+		rawExtract = IGNORE_PUNCTUATION_MARK ? rawExtract.replace(new RegExp(regExp, 'g'), '') : rawExtract;
 	}
     reg = new RegExp("([ \t\n\r]+)", 'g')
     var extract = rawExtract.split(reg)
