@@ -1,8 +1,8 @@
 const LINE_WIDTH = 35;
 const ARTICLE_LENGTH = 340;
-const IGNORE_CASE = true;
-const IGNORE_PUNCTUATION_MARK = true;
-const KEEP_PERIOD_COMMA_QUESTION = true;
+var IGNORE_CASE = true;
+var IGNORE_PUNCTUATION_MARK = true;
+var KEEP_PERIOD_COMMA_QUESTION = true;
 startDate = new Date();
 
 function tokenize(str) {
@@ -129,6 +129,21 @@ function initializeExerciseFromJSON(data) {
     $("#article-content").focus();
 }
 
+// handle settings
+$("#IGNORE_CASE")[0].checked = IGNORE_CASE
+$("#IGNORE_PUNCTUATION_MARK")[0].checked=IGNORE_PUNCTUATION_MARK
+$("#KEEP_PERIOD_COMMA_QUESTION")[0].checked=KEEP_PERIOD_COMMA_QUESTION
+$('#IGNORE_CASE').change(function () {
+    IGNORE_CASE=$("#IGNORE_CASE")[0].checked
+});
+$('#IGNORE_PUNCTUATION_MARK').change(function () {
+    IGNORE_PUNCTUATION_MARK=$("#IGNORE_PUNCTUATION_MARK")[0].checked
+});
+$('#KEEP_PERIOD_COMMA_QUESTION').change(function () {
+    KEEP_PERIOD_COMMA_QUESTION=$("#KEEP_PERIOD_COMMA_QUESTION")[0].checked
+});
+
+
 // load a sample extract and convert it into an exercise
 // Page.getJSONRandomSummary((data) => initializeExerciseFromJSON(data));
 var data = {
@@ -210,5 +225,9 @@ $(function() {
         }
         initializeExerciseFromJSON(data);
         $("#article-content").focus();
+    });
+
+    $('#reset').on('click', function() {
+        $("#resultDiv").html("")
     });
 });
