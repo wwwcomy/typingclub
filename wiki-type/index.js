@@ -181,7 +181,7 @@ $(function() {
             var itemData = articles[category];
             for (var item in itemData) {
                 if (t === itemData[item].title) {
-                    return itemData[item].content;
+                    return {"category": category, "content": itemData[item].content};
                 }
             }
         }
@@ -219,9 +219,9 @@ $(function() {
             "titles": {
                 "canonical": title,
                 "normalized": title,
-                "display": title
+                "display": title + "-" + content.category
             },
-            "extract": content
+            "extract": content.content
         }
         initializeExerciseFromJSON(data);
         $("#article-content").focus();
@@ -229,5 +229,23 @@ $(function() {
 
     $('#reset').on('click', function() {
         $("#resultDiv").html("")
+    });
+
+    $('#randomBtn').on('click', function() {
+        // pick a random article from articles
+        var categories = Object.keys(articles);
+        var randomCategory = categories[Math.floor(Math.random() * categories.length)];
+        var itemData = articles[randomCategory];
+        var randomItem = itemData[Math.floor(Math.random() * itemData.length)];
+        var data = {
+            "titles": {
+                "canonical": randomItem.title,
+                "normalized": randomItem.title,
+                "display": randomItem.title + "-" + randomCategory
+            },
+            "extract": randomItem.content
+        }
+        initializeExerciseFromJSON(data);
+        $("#article-content").focus();
     });
 });
